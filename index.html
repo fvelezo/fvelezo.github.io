@@ -3,17 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Telephones</title>
+
+    <style>
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          padding-left: 10px;
+        }
+
+        header {
+            font-size: 20px;
+        }
+
+        nav {
+          float: left;
+          width: 20%;
+          height: 150px;
+          background: #eeeeee;
+          padding: 20px;
+        }
+
+        .seltext {
+            font-weight: bold;
+        }
+
+        .auxtext {
+            font-size: 14px;
+            color: #807F7F;
+        }
+
+    </style>
+
   </head>
   <body>
 
-    <!--- Se resaltan los bordes de los bloques para realizar el diseño --->
-
-    <header  style="border:1px solid black; border-width:2px;">
+    <header>
       <h2>Telephones by region</h2>
     </header>
 
-    <nav style="border:1px solid red; border-width:2px;">
-      <p>Region:</p>
+    <nav style="border:1px solid #BEBDBD; border-width:2px;">
+      <p class="seltext">Region:</p>
       <select id="region" name="region"  onchange="selectPlot()">
         <option value="N.Amer">N.Amer</option>
         <option value="Europe">Europe</option>
@@ -23,9 +52,12 @@
         <option value="Africa">Africa</option>
         <option value="Mid.Amer">Mid.Amer</option>
       </select>
+      <br>
+      <hr>
+      <p class="auxtext"> Data from AT&T (1961) The World's Telephones. </p>
     </nav>
 
-    <div style="border:1px solid blue; border-width:2px;">
+    <div>
       <div class="myImage" id="N.Amer"   style="display:block"> <img src="figs/N.Amer.png"   alt="N.Amer">   </div>
       <div class="myImage" id="Europe"   style="display:none">  <img src="figs/Europe.png"   alt="Europe">   </div>
       <div class="myImage" id="Asia"     style="display:none">  <img src="figs/Asia.png"     alt="Asia">     </div>
