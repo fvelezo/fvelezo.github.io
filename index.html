@@ -5,7 +5,14 @@
     <title>Telephones</title>
   </head>
   <body>
-    <nav>
+
+    <!--- Se resaltan los bordes de los bloques para realizar el diseño --->
+
+    <header  style="border:1px solid black; border-width:2px;">
+      <h2>Telephones by region</h2>
+    </header>
+
+    <nav style="border:1px solid red; border-width:2px;">
       <p>Region:</p>
       <select id="region" name="region"  onchange="selectPlot()">
         <option value="N.Amer">N.Amer</option>
@@ -18,7 +25,7 @@
       </select>
     </nav>
 
-    <div>
+    <div style="border:1px solid blue; border-width:2px;">
       <div class="myImage" id="N.Amer"   style="display:block"> <img src="figs/N.Amer.png"   alt="N.Amer">   </div>
       <div class="myImage" id="Europe"   style="display:none">  <img src="figs/Europe.png"   alt="Europe">   </div>
       <div class="myImage" id="Asia"     style="display:none">  <img src="figs/Asia.png"     alt="Asia">     </div>
