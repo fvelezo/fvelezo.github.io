@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Hello World</title>
-  </head>
-  <body>
-    <h1>Nivel 1</h1>
+    <head>
+        <meta charset="utf-8">
+        <title>Telephones</title>
+    </head>
+    <body>
+        <!--- Menu de seleccion al lado izquierdo --->
+        <nav>
+            <p>Region:</p>
 
-    <h2>Nivel 2</h2>
+            <!--- onchange llama la función cuando el elemento cambia --->
+            <select id="region" name="region"  onchange="selectPlot()">
 
-    <p>
-        Markdown es un lenguaje de marcado ligero creado por John Gruber que
-        trata de conseguir la máxima legibilidad y facilidad de publicación
-        tanto en sus forma de entrada como de salida, inspirándose en
-        muchas convenciones existentes para marcar mensajes de correo
-        electrónico usando texto plano.
-    </p>
+                <option value="N.Amer">N.Amer</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
+                <option value="S.Amer">S.Amer</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Africa">Africa</option>
+                <option value="Mid.Amer">Mid.Amer</option>
 
-    <blockquote>
-        Markdown es un lenguaje de marcado ligero creado por John Gruber que
-        trata de conseguir la máxima legibilidad y facilidad de publicación
-        tanto en sus forma de entrada como de salida, inspirándose en
-        muchas convenciones existentes para marcar mensajes de correo
-        electrónico usando texto plano.
+            </select>
+        </nav>
+        <script>
+            function selectPlot() {
 
-        Realizando pruebas
-    </blockquote>
+                <!--- obtiene el elemento seleccionado en el menu --->
+                var region = document.getElementById("region").value;
 
-    <p title="--> tooltip <--">
-        Parrafo con tooltip.
-    </p>
-
-
-  </body>
+                <!--- imprime un mensaje para depurar el código --->
+                window.alert("Region seleccionada: " + region);
+            }
+        </script>
+    </body>
 </html>
