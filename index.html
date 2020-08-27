@@ -2,59 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Hello World</title>
+
+    <!--- vínculo al arhcivo ---->
+    <link rel="stylesheet" href="style.css">
+    <!--------------------------->
+
+    <title>Estructura semantica</title>
   </head>
   <body>
-    <h1>Nivel 1</h1>
+    <header>
+        Encabezamiento
+    </header>
+    <section>
+        <h2>Titulo 1</h1>
 
-    <h2>Nivel 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh velit, gravida
+        sed diam a, consectetur cursus felis. Duis scelerisque congue efficitur. Duis nec lacus
+        id nulla tempus commodo. Curabitur ut tincidunt mauris. Vivamus tincidunt risus augue,
+        a egestas tellus sodales vitae. Fusce vitae felis eu tortor sodales gravida. </p>
 
-    <p>
-        Markdown es un lenguaje de marcado ligero creado por John Gruber que
-        trata de conseguir la máxima legibilidad y facilidad de publicación
-        tanto en sus forma de entrada como de salida, inspirándose en
-        muchas convenciones existentes para marcar mensajes de correo
-        electrónico usando texto plano.
-    </p>
+        <p>Nulla eget condimentum nulla. Fusce pretium ornare lectus eu bibendum. Donec eros mauris,
+        laoreet quis viverra id, lobortis vel dui.</p>
 
-  </body>
-  <body>
+    </section>
+    <section>
 
-      <p>Se pueden crear bloques de código:</p>
+        <h2>Listas sin numeración</h2>
 
-      <code>
-          <p>for (i = 1; i < 5; i++)</p>
-          <p>{</p>
-          <p>    printf('%d', i)</p>
-          <p>}</p>
-      </code>
+        <ul>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>
 
-      <p>
-          O se puede colocar código en linea <code>cat out.1 out.2</code>.
-      </p>
+    </section>
+    <section>
 
-      <samp>Sample output from a computer program</samp>
+        <h2>Listas enumeradas</h2>
 
-  </body>
-  
-  <body>
+        <ol>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ol>
 
-    <p>Este es un vínculo a <a href="http://www.google.com">GOOGLE</a>.</p>
+    </section>
 
     <footer>
-        <p>Autor: Juan David Velasquez</p>
-        <p>
-            Correo: <a href="mailto:jdvelasq@unal.edu.co">
-            jdvelasq@unal.edu.co</a>.
-        </p>
+        Pie de página
     </footer>
 
-    <nav>
-        <a href="/html/">HTML</a> |
-        <a href="/css/">CSS</a> |
-        <a href="/js/">JavaScript</a> |
-        <a href="/jquery/">jQuery</a>
-    </nav>
 
-</body>
+  </body>
 </html>
