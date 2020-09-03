@@ -1,94 +1,287 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Modelos Predicción Covid</title>
+    <title>COVID - DASHBOARD</title>
+
     <style>
+
         body {
           font-family: Arial, Helvetica, sans-serif;
           padding-left: 10px;
         }
+
         header {
             font-size: 20px;
-            display: block; font-size: 2em; margin-top: 0.67em; 
-            margin-bottom: 0.67em; margin-left: 0; margin-right: 0; 
-            font-weight: bold
         }
+
         nav {
           float: left;
-          width: 20%;
-          height: 150px;
+          width: 45%;
+          height: 100px;
           background: #eeeeee;
           padding: 20px;
         }
+
+        .comparaciones {
+          float: left;
+          width: 45%;
+          height: 100px;
+          background: #eeeeee;
+          padding: 20px;
+        }
+
         .seltext {
             font-weight: bold;
         }
+
         .auxtext {
             font-size: 14px;
             color: #807F7F;
         }
-    </style>
-  <center>
-  <h1>Modelos Predicción Covid</h1>
-  </center>
-  </head>
-    <body>
-    <div>
-      <nav>
-        <p>
-        <b>Menú principal</b>
-        </p>
-         <p><a href="recuperados.html"> Estimado de casos recuperados</a></p>
-        <p><a href="fallecidos.html"> Estimado de casos fallecimientos</a></p>
-      </nav> 
-      <p align="justify">
-        
-      </p>
-        <p>
-          <center>
-            <img src="Ejemplo 1.jfif">
-        </p>
-        <p>
-         Grafico xxxxxxx xxxxx 
-         </p>
-         <p>
-          En el gráfico se en encutran que los caoss que se están registrando, blablablablablablablablablablablablablablablablablablablablabla evidenciando que los resultados son bla
-           blablablablablablablablablablablablablablablablablablablablablablablablablabla
-          </p>
-          </center>
-  
-          <p>
-          <center>
-            <img src="ejemplo2.png">
-            <img src="ejemplo3.png">
-           </p>
-        <p>
-         Grafico XXX registro comparativo de los casos xxxxxx
-         </p>
-         <p>
-          En el gráfico se en encutran que los caoss que se están registrando, blablablablablablablablablablablablablablablablablablablablabla evidenciando que los resultados son bla
-           blablablablablablablablablablablablablablablablablablablablablablablablablablabla
-          </p>
-          </center>
-    </div>
-  </body>
-  <br>
-  <br>
-  <br>
-  <b><iframe class="frame_1" src="Test.html" title="PRUEBA" width="100%" height="500px" display="none">
 
-  </iframe>
-  </b>
-  <br>
-  <br>
-  <br>
-<footer>
+    </style>
+
+  </head>
+  
+  <body>
+    
+    <header align="center">
+      <h2>DASHBOARD - COVID</h2>
+    </header>
+
+    <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Filtro 5</p>
+      <select id="filtro_5" name="filtro_5"  onchange="selectPlotComparate2()">
+
+            <option value="1">1</option>
+        
+            <option value="2">2</option>
+        
+            <option value="3">3</option>
+
+            <option value="nf_1">nf_1</option>
+        
+            <option value="nf_2">nf_2</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Seleccione Filtro 5 </p>
+    </nav>
+    <br>
+    <div width="95%" align="center">
+        <b><iframe class="frame_Comp" name="nf_1" src="Test.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
+        <b><iframe class="frame_Comp" name="nf_2" src="casos_acumulados_bog.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
+    </div>
+    <br>
+    <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Ciudad</p>
+      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()">
+
+        
+            <option value="Bogota">Bogota</option>
+        
+            <option value="Medellin">Medellin</option>
+        
+            <option value="Cali">Cali</option>
+        
+            <option value="Barranquilla">Barranquilla</option>
+        
+            <option value="Todas las Ciudades">Todas las Ciudades</option>
+        
+            <option value="N.A">N.A</option>
+        
+            <option value="Otra">Otra</option>
+
+      </select>
+
+      <br>
+      <hr>
+      <p class="auxtext" align="center"> Seleccione la ciudad </p>
+    </nav>
+
+     <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Grafica</p>
+      <select id="filtro_2" name="filtro_2"  onchange="selectPlot()">
+
+            <option value="Barras">Barras</option>
+        
+            <option value="Dispersion">Dispersion</option>
+        
+            <option value="Comparacion">Comparacion</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
+    </nav>
+    
+
+    <div align="center">
+
+      <div class="myImage" id="Bogota_Barras" style="display:none"> <img src="Graficas/Bogota_Barras.png" alt="Bogota_Barras"> </div>
+
+      <div class="myImage" id="Medellin_Barras" style="display:none"> <img src="Graficas/Medellin_Barras.png" alt="Medellin_Barras"> </div>
+
+      <div class="myImage" id="Cali_Barras" style="display:none"> <img src="Graficas/Cali_Barras.png" alt="Cali_Barras"> </div>
+
+    </div>
+
+    <p>
+
+        <p class="mylabel" id="Bogota_Barras_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS </p>
+
+        <p class="mylabel" id="Medellin_Barras_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS </p>
+
+    </p>
+
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Flitro 3</p>
+      <select id="filtro_3" name="filtro_3"  onchange="selectPlotComparate()">
+
+        
+            <option value="A">A</option>
+        
+            <option value="B">B</option>
+        
+            <option value="C">C</option>  
+                    
+            <option value="N.A">N.A</option>
+        
+            <option value="Otra">Otra</option>
+
+      </select>
+
+      <br>
+      <hr>
+      <p class="auxtext" align="center"> Seleccione la filtro 3 </p>
+    </nav>
+
+     <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Filtro 4</p>
+      <select id="filtro_4" name="filtro_4"  onchange="selectPlotComparate()">
+
+            <option value="a">a</option>
+        
+            <option value="b">b</option>
+        
+            <option value="c">c</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Seleccione Filtro 4 </p>
+    </nav>
+
+    
+
+    <div align="center">
+
+      <div class="myImagecomparate" id="A_a_1" style="display:none"> <img src="Graficas/A_a_1.jpg" alt="Bogota_Barras"> </div>
+
+      <div class="myImagecomparate" id="B_b_1" style="display:none"> <img src="Graficas/B_b_1.jpg" alt="Medellin_Barras"> </div>
+
+      <div class="myImagecomparate" id="C_c_1" style="display:none"> <img src="Graficas/C_c_1.jpg" alt="Cali_Barras"> </div>
+
+    </div>
+
+    <p>
+
+        <p class="mylabelcomparate" id="A_a_1_t" style="display:none" align="center"> GRAFICA COMPARACION IMAGEN 1 </p>
+
+        <p class="mylabelcomparate" id="B_b_1_t" style="display:none" align="center">  GRAFICA COMPARACION IMAGEN 2 </p>
+
+    </p>
+
+    <br>
+    <hr>
+
+    <div width="95%" align="center">
+        <b><iframe class="frame_Comp" name="nf_1" src="Test.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
+        <b><iframe class="frame_Comp" name="nf_2" src="casos_acumulados_bog.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
+    </div>
+
+    <script>
+      function selectPlotComparate2() {
+        var filtro_5 = document.getElementById("filtro_5").value;
+        var frame = document.getElementsByClassName("frame_Comp");
+        for (var i = 0; i < frame.length; i++) {
+
+          if (frame[i].name == filtro_5) {
+            frame[i].style.display = "block"
+          }else{
+            frame[i].style.display = "none"
+          }
+
+        }
+      }
+
+
+      function selectPlot() {
+        var filtro_1 = document.getElementById("filtro_1").value;
+        var filtro_2 = document.getElementById("filtro_2").value;
+        var carac = "_"
+        var carac2 = "_t"
+        var images = document.getElementsByClassName("myImage");
+        var lbl = document.getElementsByClassName("mylabel");
+        for (var i = 0; i < images.length; i++) {
+
+          if (images[i].id == filtro_1.concat(carac, filtro_2)) {
+            images[i].style.display = "block"
+          }else{
+            images[i].style.display = "none"
+          }
+
+          if (lbl[i].id == filtro_1.concat(carac, filtro_2, carac2)) {
+            lbl[i].style.display = "block"
+          }else{
+            lbl[i].style.display = "none"
+          }
+
+        }
+      }
+
+      function selectPlotComparate() {
+        var filtro_1 = document.getElementById("filtro_3").value;
+        var filtro_2 = document.getElementById("filtro_4").value;
+        var filtro_3 = document.getElementById("filtro_5").value;
+        var carac = "_"
+        var carac2 = "_t"
+        var images = document.getElementsByClassName("myImagecomparate");
+        var lbl = document.getElementsByClassName("mylabelcomparate");
+        for (var i = 0; i < images.length; i++) {
+
+          if (images[i].id == filtro_1.concat(carac, filtro_2, carac, filtro_3)) {
+            images[i].style.display = "block"
+          }else{
+            images[i].style.display = "none"
+          }
+
+          if (lbl[i].id == filtro_1.concat(carac, filtro_2, carac, filtro_3, carac2)) {
+            lbl[i].style.display = "block"
+          }else{
+            lbl[i].style.display = "none"
+          }
+
+        }
+      }
+
+    </script>
+  </body>
+  <footer>
   <address>
-    Autor: Bartolomé Sintes Marco<br>
-    correo: bartolome.sintes@example.com
+    Autor: LAURA MARIA URIBE DIEZ - MAURICIO VALENCIA ORTEGON - FABIAN MAURICIO VELEZ OSORIO - CARLOS MARIO SIERRA MORENO<br>
+    correo: luribed@unal.edu.co - mavalenciaor@unal.edu.co - fvelezo@unal.edu.co - cmsierramo@unal.edu.co
   </address>
-  <p>Última modificación: 01 de Septimbre de 2020</p>
+  <p>Última modificación: 31 de Agosto del 2020</p>
 </footer>
 </html>
